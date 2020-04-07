@@ -1,0 +1,12 @@
+
+<div leaflet leafletDraw class="leaflet-map" 
+[leafletOptions]="leaftletOptions"
+[leafletDrawOptions]="drawOptions"
+[leafletZoom]="currentZoom"
+(leafletZoomChange)="onZoomChange($event)"
+[leafletCenter]="currentCenter"
+[leafletLayersControl]="layersControl"
+(leafletCenterChange)="onCenterChange($event)"
+(leafletDrawCreated)="onDrawCreated($event)"
+(leafletMapReady)="onMapReady($event)">
+</div>

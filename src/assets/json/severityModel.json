@@ -1,0 +1,156 @@
+{
+    "D": [{
+            "priority": "Priority M - Monitor during next inspection",
+            "extent": " Extent D - Extensive, more than 20% affected",
+            "severity": "Severity 1 - No significant defects",
+            "type": "M",
+            "color": "green"
+        },
+        {
+            "priority": "Priority F - Re-inspect by date",
+            "extent": "Extent D - Extensive, more than 20% affected",
+            "severity": "Severity 2 - Minor defects of a non urgent nature",
+            "type": "F",
+            "color": "yellow"
+        },
+        {
+            "priority": "Priority E - 6 months",
+            "extent": "Extent D - Extensive, more than 20% affected",
+            "severity": " Severity 3 - Defects where action is required",
+            "type": "E",
+            "color": "red"
+        },
+        {
+            "priority": "Priority C - 1 month",
+            "extent": "Extent D - Extensive, more than 20% affected",
+            "severity": "Severity 4 - Severe defects where urgent action is required",
+            "type": "C",
+            "color": "pink"
+        },
+        {
+            "priority": "Priority A - Immediate",
+            "extent": "Extend D - Extensive, more than 20% affected",
+            "severity": "Severity 5 - H&S implication / possible legislation breach",
+            "type": "A",
+            "color": "blue"
+        }
+    ],
+    "C": [
+
+        {
+            "priority": "Priority M - Monitor during next inspection",
+            "extent": "Extent C - Moderate, 5% - 20% affected",
+            "severity": "Severity 1 - No significant defects",
+            "type": "M",
+            "color": "green"
+        },
+        {
+            "priority": "Priority F - Re-inspect by date",
+            "extent": " Extent C - Moderate, 5% - 20% affected",
+            "severity": " Severity 2 - Minor defects of a non urgent nature",
+            "type": "F",
+            "color": "yellow"
+        },
+        {
+            "priority": "Priority E - 6 months",
+            "extent": "Extent C - Moderate, 5% - 20% affected",
+            "severity": "Severity 3 - Defects where action is required",
+            "type": "E",
+            "color": "red"
+        },
+        {
+            "priority": "Priority C - 1 month",
+            "extent": "Extent C - Moderate, 5% - 20% affected",
+            "severity": "Severity 4 - Severe defects where urgent action is required",
+            "type": "C",
+            "color": "pink"
+        },
+        {
+            "priority": "Priority A - Immediate",
+            "extent": "Extent C - Moderate, 5% - 20% affected",
+            "severity": " Severity 5 - H&S implication / possible legislation breach",
+            "type": "A",
+            "color": "blue"
+        }
+
+
+
+    ],
+    "B": [
+
+        {
+            "priority": "Priority M - Monitor during next inspection",
+            "extent": "Extent B - Slight, not more than 5% of area affected",
+            "severity": "Severity 1 - No significant defects",
+            "type": "M",
+            "color": "green"
+        },
+        {
+            "priority": "Priority F - Re-inspect by date",
+            "extent": "Extent B - Slight, not more than 5% of area affected",
+            "severity": " Severity 2 - Minor defects of a non urgent nature",
+            "type": "F",
+            "color": "yellow"
+        },
+        {
+            "priority": "Priority E - 6 months",
+            "extent": "Extent B - Slight, not more than 5% of area affected",
+            "severity": "Severity 3 - Defects where action is required",
+            "type": "E",
+            "color": "red"
+        },
+        {
+            "priority": "Priority C - 1 month",
+            "extent": "Extent B - Slight, not more than 5% of area affected",
+            "severity": "Severity 4 - Severe defects where urgent action is required",
+            "type": "C",
+            "color": "pink"
+        },
+        {
+            "priority": "Priority A - Immediate",
+            "extent": "Extent B - Slight, not more than 5% of area affected",
+            "severity": " Severity 5 - H&S implication / possible legislation breach",
+            "type": "A",
+            "color": "blue"
+        }
+
+    ],
+    "A": [
+
+        {
+            "priority": "Priority M - Monitor during next inspection",
+            "extent": "Extent A - No significant defect. ",
+            "severity": "Severity 1 - No significant defects",
+            "type": "M",
+            "color": "green"
+        },
+        {
+            "priority": "Priority F - Re-inspect by date",
+            "extent": "Extent A - No significant defect. ",
+            "severity": " Severity 2 - Minor defects of a non urgent nature",
+            "type": "M",
+            "color": "green"
+        },
+        {
+            "priority": "Priority E - 6 months",
+            "extent": "Extent A - No significant defect. ",
+            "severity": "Severity 3 - Defects where action is required",
+            "type": "M",
+            "color": "green"
+        },
+        {
+            "priority": "Priority C - 1 month",
+            "extent": "Extent A - No significant defect. ",
+            "severity": "Severity 4 - Severe defects where urgent action is required",
+            "type": "M",
+            "color": "green"
+        },
+        {
+            "priority": "Priority A - Immediate",
+            "extent": "Extent A - No significant defect. ",
+            "severity": " Severity 5 - H&S implication / possible legislation breach",
+            "type": "A",
+            "color": "blue"
+        }
+    ]
+}

@@ -1,0 +1,28 @@
+<!-- <div class="row">
+<div class="col-8"> -->
+<nav class="app-breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item active" *ngFor="let item of breadcrumb; let i = index">
+      <a *ngIf="i !== breadcrumb.length - 1" [href]="item.path">
+        <img src="../../../../assets/image/home-icon-dark.svg" style="height: 13px;">
+        {{ item.name }}
+      </a>
+      <span *ngIf="i == breadcrumb.length - 1">
+        {{ item.name }}
+      </span>
+    </li>
+  </ol>
+</nav>
+<!-- </div>
+  <div class="col-1 breadcrumb">
+    <span>Annotation</span>
+  </div>
+  <div class="col-1 breadcrumb">
+    <span>Measurement</span>
+  </div>
+</div> -->
+
+
+<!-- <span class="pull-right">
+  Text 3
+</span> -->

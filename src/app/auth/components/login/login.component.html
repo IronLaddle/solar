@@ -1,0 +1,25 @@
+<div class="login-page">
+    <div class="bg-overlay"></div>
+    <img class="ad-logo" src="../../../../../assets/image/aerodyne-logo-dark.svg" alt="logo">
+    <div class="card">
+      <h6 class="app-header">WELCOME TO VERTIKALITI SOLAR!</h6>
+        <p class="next-header">Please login with your credentials</p>
+        <form [formGroup]="loginForm" (ngSubmit)="submit()" class="mt-4 formgroup-login">
+          <label class="label-loginform">Username</label>
+          <div class="form-group input-group mb-4">
+            <input type="text" class="form-control" formControlName="username" placeholder="" #username>
+          </div>
+          <label class="label-loginform">Password</label>
+          <div class="form-group input-group mb-4">
+            <input type="password" class="form-control" formControlName="password" placeholder="">
+          </div>
+          <div class="align-center">
+            <button *ngIf="!formSubmit" type="submit" class="btn-f btn-large btn-block" [disabled]="formSubmit">Login</button>
+          </div>
+          <div *ngIf="formSubmit" class="spinner-border app-color align-center" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+        </form>
+    </div>
+  </div>
+  

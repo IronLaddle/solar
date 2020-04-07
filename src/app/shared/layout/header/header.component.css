@@ -1,0 +1,142 @@
+.navbar {
+  width: 100vw;
+  height: 6vh;
+  padding: 0;
+  background-color: rgb(26, 42, 49);
+  z-index: 2000;
+}
+
+.navbar-brand {
+  height: 100%;
+  background-color: #ffffff00 !important;
+}
+
+.navbar-brand img {
+  height: 100%;
+  width: 20%;
+  margin-left: 10px;
+}
+
+.navbar-menu {
+  font-size: 12px;
+}
+
+.nav-link {
+  color: #ffffff !important;
+}
+
+.dropdown-toggle::after {
+  display: none;
+}
+
+/* hamburger menu for media screen drop down */
+.hamburger {
+  background: black;
+  position: relative;
+  height: 2px;
+  width: 25px;
+  transition: all .5s ease-in-out;
+  -moz-transition: all .5s ease-in-out;
+  -webkit-transition: all .5s ease-in-out;
+  -o-transition: all .5s ease-in-out;
+}
+
+.hamburger:before,
+.hamburger:after {
+  background: #000;
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 25px;
+  height: 2px;
+  transition: all .5s ease-in-out;
+  -moz-transition: all .5s ease-in-out;
+  -webkit-transition: all .5s ease-in-out;
+  -o-transition: all .5s ease-in-out;
+}
+
+.hamburger:before {
+  top: -6px;
+}
+
+.hamburger:after {
+  top: 6px;
+}
+
+.hamburger.hide {
+  background: transparent;
+}
+
+.hamburger.hide:before {
+  transform: rotate(-45deg) translate(-5px, 6px);
+
+}
+
+.hamburger.hide:after {
+  transform: rotate(45deg) translate(-2px, -5px);
+}
+
+
+@media (max-width: 1024px) {
+  /* .navbar-brand {
+    width: 35vw;
+  }
+
+  .navbar-left {
+    width: 15vw;
+  } */
+  .navbar-menu, .dropdown-menu, .dropdown-item {
+    font-size: 10px !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .navbar {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  .navbar-brand img {
+    width: auto;
+    height: 4vh;
+  }
+
+  .navbar-menu {
+    background: #ffffff;
+    padding: 10px;
+  }
+
+  .nav-link {
+    color: #343a40 !important;
+  }
+
+  .navbar-left {
+    width: 100%;
+  }
+  .dropdown-menu  {
+    font-size: 12px;
+  }
+}
+
+.toggle-navbar{
+  display: none;
+}
+.dropdown-item{
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.dropdown-item:hover, .dropdown-item:focus {
+  background-color: #b4c7da9e !important;
+}
+
+.space-right {
+  padding-right: 20px;
+}
+
+.nav-header{
+  color: #787856; 
+  font-size: 15px;
+  padding-left: 5px;
+}
+

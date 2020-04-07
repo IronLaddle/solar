@@ -1,0 +1,126 @@
+<div class="map"
+     leaflet
+     [leafletOptions]="options" 
+     [leafletLayers]="markers"
+     [leafletLayersControl]="layersControl"
+     style="position: fixed;">
+</div>
+
+
+<div class="side">
+  <!-- side bar  -->
+  <div class="side-bar shadow-sm" [ngClass]="{'show': showSideBar}">
+      <!-- sidebar content -->
+      <div class="side-bar-content" [ngClass]="{'hide': !showSideBar}">
+        <!-- asset -->
+        <div class="card">
+          <div class="card-header">
+            ASSETS OVERVIEW
+          </div>
+          <div class="card-body ins-1-body">
+            <div class="container-fluid">
+            <div class="row">
+              <div class="col-4">
+                <div class="row" style="padding-left: 20px;">
+                    <img src="../../../../assets/image/mw-icon-yellow.svg">
+                    <h4 style="padding-left: 5px;">{{assetOvw?.total_mw}}</h4>
+                </div>
+                <h6 class="size-font">MW</h6>
+              </div>
+              <div class="col-4">
+                <div class="row" style="padding-left: 20px;">
+                    <img src="../../../../assets/image/farms-icon-yellow.svg">
+                    <h4 style="padding-left: 5px;">{{assetOvw?.sites}}</h4>
+                </div>
+                <h6 class="size-font">FARMS</h6>
+              </div>
+              <div class="col-4">
+                <div class="row" style="padding-left: 20px;">
+                    <img src="../../../../assets/image/anomalies-icon-yellow.svg">
+                    <h4 style="padding-left: 5px;">{{assetOvw?.anomalies}}</h4>
+                </div>
+                <h6 class="size-font">ANOMALIES</h6>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- defects -->
+        <div class="card">
+          <div class="card-header">
+            DEFECT SEVERITY
+          </div>
+          <div class="card-body scroll" style="padding-right: 10px;">
+            <div class="row" *ngFor="let defectSev of defectSev">
+              <div class="col-4">
+                <h6>{{defectSev.name}}</h6>
+              </div>
+              <div class="col-2">
+                <img *ngIf="defectSev.severity.High > 0" src="../../../assets/image/alert-icon-red.svg">
+              </div>
+              <div class="col-6">
+                <!-- 'success', 'info', 'warning', 'danger' -->
+                <div class="progress">
+                  <div class="progress-bar bg-success" role="progressbar" [style.width.%]="defectSev.severity.Low" aria-valuenow=1 aria-valuemin="0" aria-valuemax="100">
+                    {{defectSev.severity.Low}} %</div>
+                  <div class="progress-bar bg-warning" role="progressbar" [style.width.%]="defectSev.severity.Medium" aria-valuenow="1" aria-valuemin="0" aria-valuemax="100">
+                    {{defectSev.severity.Medium}} %</div>
+                  <div class="progress-bar bg-danger" role="progressbar" [style.width.%]="defectSev.severity.High" aria-valuenow="1" aria-valuemin="0" aria-valuemax="100">
+                    {{defectSev.severity.High}} %</div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- docs -->
+        <div class="card">
+          <div class="card-header">
+            DOCUMENTS
+          </div>
+          <div class="card-body" style="text-align: left;">
+              <div class="row" style="text-align: left;padding-left: 10px;padding-bottom: 10px;">
+                <div class="col-10">
+                  <h4 class="card-subtitle">User Manual ISS</h4>
+                <p class="card-text">Last Updated : 10th Jan 2020</p>
+                </div>
+                <div class="col-2">
+                  <fa-icon icon="download"></fa-icon>
+                </div>
+              </div>
+              <div class="row" style="text-align: left;padding-left: 10px;">
+                <div class="col-10">
+                  <h4 class="card-subtitle">Severity Model ISS</h4>
+                <p class="card-text">Last Updated : 10th Jan 2020</p>
+                </div>
+                <div class="col-2">
+                  <fa-icon icon="download"></fa-icon>
+                </div>
+            </div>
+          </div>
+        </div>
+        <!-- end doc -->
+      </div>
+  </div>
+  <!-- side bar toggler -->
+  <div class="side-bar-toggle" [ngClass]="{'move': showSideBar}" (click)="toggleSideBar()">
+      <div class="sidebar-hamburger" [ngClass]="{'hide': showSideBar}"></div>
+  </div>
+</div>
+
+<!-- right bar -->
+<!-- <div class="bottom" style="text-align: left;">
+    <div class="bottom-bar shadow-sm show">
+        <span style="color: white;font-size: 14px;">SEARCH</span><br>
+        <div class="input-group" style="padding-top: 8px;padding-right: 15px;">
+            <input [(ngModel)]="selected" [typeahead]="states" class="form-control">
+            <div class="input-group-append">
+              <button class="btn btn-secondary" type="button" style="background: #5B6CE8;">
+                <fa-icon icon="search"></fa-icon>
+              </button>
+            </div>
+          </div>
+    </div>
+</div> -->

@@ -1,0 +1,51 @@
+a {
+    color: white !important;
+}
+
+.scroll-container {
+    scroll-padding: 50px 0 0 50px;
+}
+
+h5 {
+    font-size: 1.1rem;
+}
+
+h6 {
+    font-size: 0.8rem;
+}
+
+.card {
+    background-color: #1b1e21;
+    padding-left: 10px;
+}
+
+.card-body {
+    padding: 0rem;
+}
+
+p {
+    font-size: 10px;
+}
+
+.tableBodyScroll tbody {
+    display: block;
+    max-height: 90px;
+    overflow-y: scroll;
+}
+
+.tableBodyScroll thead,
+tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+.scrollable {
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.scroll {
+    max-height: 100%;
+    overflow-y: auto;
+}

@@ -1,0 +1,6 @@
+<div *ngIf="windowloader['loader']" class="loading-screen-wrapper">
+  <div class="loading-screen-icon">
+    <img src="../../../../assets/svg/loader.svg" alt="loader"><br>
+    {{(windowloader['name']) ? windowloader['name'] : 'Loading ...'}}
+  </div>
+</div>

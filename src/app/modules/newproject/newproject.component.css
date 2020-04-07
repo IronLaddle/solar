@@ -1,0 +1,16 @@
+h5,p {
+    color: white;
+}
+
+.card-body {
+    background: black;
+}
+
+.card {
+    border: 0px !important;
+}
+
+.card-text {
+    color: white;
+    padding-top: 5px;
+}

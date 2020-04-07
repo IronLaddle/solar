@@ -1,0 +1,7 @@
+<div *ngIf="isLogged" class="layout">
+  <app-header *ngIf="isLogged"></app-header>
+</div>
+<div [ngClass]="{'app-body': isLogged}">
+  <router-outlet></router-outlet>
+
+</div>

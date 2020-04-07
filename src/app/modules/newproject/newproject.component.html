@@ -1,0 +1,50 @@
+<div class="container">
+    <form [formGroup]="newProjectForm" (ngSubmit)="submit()">
+    <div class="row" style="padding-top: 20px;padding-bottom: 5px;">
+        <div class="col-6 float-left">
+            <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">CREATE NEW SITE</h5>
+                  <label class="card-text">Site Name</label>
+                  <input type="text" class="form-control" formControlName="siteName" placeholder="">
+                  <label class="card-text">Project Start Date</label>
+                  <input type="date" class="form-control" formControlName="startDate" placeholder="">
+                  <label class="card-text">Country</label>
+                  <input type="text" class="form-control" formControlName="country" placeholder="">
+                  <label class="card-text">Site Adress</label>
+                  <textarea class="form-control" formControlName="siteAddress" rows="3" cols="30"></textarea>
+                  <label class="card-text">Total MW</label>
+                  <input type="number" class="form-control" formControlName="totalMw" placeholder="">
+                  <label class="card-text">Company</label>
+                  <input type="text" class="form-control" formControlName="company" placeholder="">
+                </div>
+            </div>
+        </div>
+    <!-- </form> -->
+        <div class="col-6">
+            <div class="card">
+                <div class="card-body" style="color: white;">
+                  <h5 class="card-title">FOLDER</h5>
+                  <label class="card-text">Folder Name</label>
+                  <input type="text" class="form-control" formControlName="folderName" placeholder="">
+                  <br>
+                  <h5 class="card-title">PILOTS</h5>
+                  <label class="card-text">Drone Pilot 1</label>
+                  <input type="text" class="form-control" formControlName="pilot1" placeholder="">
+                  <label class="card-text">Drone Pilot 2</label>
+                  <input type="text" class="form-control" formControlName="pilot2" placeholder="">
+                </div>
+            </div>
+        </div>
+    <!-- </form> -->
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <button class="btn float-left" style="background: grey;color: white;" (click)="cancel()">Cancel</button>
+        </div>
+        <div class="col-4">
+            <button *ngIf="!formSubmit" type="submit" class="btn" style="background: #5B6CE8;color: white;float: right;" [disabled]="formSubmit">Create</button>
+        </div>
+    </div>
+</form>
+</div>

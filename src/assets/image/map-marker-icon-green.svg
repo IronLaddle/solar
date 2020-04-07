@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="38px" height="48px" viewBox="0 0 38 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>map-marker-icon-green</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="home" transform="translate(-503.000000, -237.000000)" fill="#2D925E" fill-rule="nonzero">
+            <g id="site-marker" transform="translate(492.000000, 212.000000)">
+                <g id="map-marker-icon-green" transform="translate(11.000000, 25.000000)">
+                    <path d="M19,48 C15.36375,48 0,29.3268318 0,18.9033664 C0,8.47990092 8.523375,0 19,0 C29.476625,0 38,8.48002529 38,18.9033664 C38,29.3267075 22.63625,48 19,48 Z M19,8.70549768 C13.348125,8.70549768 8.75,13.2802367 8.75,18.9033664 C8.75,24.5264961 13.348125,29.1012351 19,29.1012351 C24.651875,29.1012351 29.25,24.5264961 29.25,18.9033664 C29.25,13.2802367 24.651875,8.70549768 19,8.70549768 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

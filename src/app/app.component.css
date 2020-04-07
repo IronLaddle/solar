@@ -1,0 +1,13 @@
+.layout{
+    position: absolute;
+    z-index: 900;
+}
+.app-body {
+    position: absolute;
+    top: 10vh;
+    width: 100vw;
+    height: 90vh;
+    overflow: hidden;
+    background: rgb(51, 51, 51);
+}
+

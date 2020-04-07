@@ -1,0 +1,24 @@
+.breadcrumb {
+  height: 4vh;
+  background-color: rgb(32, 42, 49);
+  border-radius: 0 !important;
+  margin: 0;
+  align-content: center;
+}
+
+.breadcrumb-item, .breadcrumb-item a {
+  color: #ffffff;
+  font-size: 12px;
+
+}
+.breadcrumb-item + .breadcrumb-item::before {
+    content: "►";
+    color: #ffffff;
+    font-size: 12px;
+}
+
+@media (max-width: 900px) {
+    .breadcrumb {
+        padding: 0.75rem 1rem;
+    }
+}

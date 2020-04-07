@@ -1,0 +1,89 @@
+.bottom {
+    display: flex;
+    position: absolute;
+    left: 50%;
+    bottom: 0vh;
+    background-color: #f5f5f5;
+    overflow: hidden !important;
+    transform: translateX(-48.5%);
+    overflow: scroll;
+  }
+  
+  .bottom-bar {
+    width: 63vw;
+    height: 0vh;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 350ms ease-in-out;
+    -moz-transition: all 350ms;
+    -webkit-transition: all 350ms;
+    -o-transition: all 350ms;
+  }
+  
+  .bottom-bar.show {
+    opacity: 1;
+    visibility: visible;
+    height: 25vh;
+  }
+  
+  .bottom-bar.show.toggle {
+    height: 0;
+  }
+  
+  .bottom-bar table tr {
+    text-align: center;
+  }
+  
+  .defect-list {
+    font-size: 10px;
+  }
+  
+  #f-type {
+    font-size: 10px;
+    height: 25px;
+  }
+  
+  @media (max-width: 900px) {
+    .bottom {
+      top: 50vh;
+      width: 100%;
+      height: fit-content;
+    }
+    .bottom-bar {
+      width: 100%;
+    }
+    .bottom-bar.show {
+      height: 40vh;
+    }
+  }
+  
+  .model-content-custom{
+    /* border-radius:1pc; */
+    border: none;
+  }
+
+  .model-header-custom{
+      text-align: center;
+      border: none;
+      color: #fff;
+      background: #1b2538;
+  }
+  
+.close-model{
+  color: #fff;
+}
+  .text-box{
+    border-radius:unset !important;
+  }
+
+  .model-footer-custom{
+    padding: 10px;
+    border:none;
+  }
+
+  .modal-body-custom {
+    padding: 10px;
+  }
+  label, .text-box{
+    font-size: 12px;
+  }

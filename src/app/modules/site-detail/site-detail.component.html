@@ -1,0 +1,586 @@
+<div class="row">
+<div class="col-sm-3">
+   
+    <div class="row">
+        <img src="../../../assets/images/inspection-defect.png" style="width: 100%;height: 40vh;">
+    </div>
+    <div class="row">
+        <h5 style="color: white;padding-left: 20px;">Site Information</h5>
+    </div>
+    <!-- <div class="card" style="color: white;">
+        <div class="card-body">
+            <h6>Site Name: {{siteDtl.name}}</h6>
+            <h6>Total MW: {{siteDtl.total_mw}}</h6>
+            <h6>Project Start Date: {{siteDtl.started_at}}</h6>
+            <h6>Adress: {{siteDtl.address}}</h6>
+            <h6>Country: {{siteDtl.country}}</h6>
+            <h6>Created by: {{profile_name}}</h6>
+            <h6>Drone Pilot 1: {{siteDtl.pilot1}}</h6>
+            <h6>Drone Pilot 2: {{siteDtl.pilot2}}</h6>
+            <h6>Company: {{siteDtl.company}}</h6>
+            <h6>Status: {{siteDtl.status}}</h6>
+            <h6>Remark: {{siteDtl.remark}}</h6>
+        </div>
+      </div> -->
+    <div class="card" style="color: white;">
+        <div class="card-body">
+        <div class="scrollable">
+        <table class="table-borderless" style="font-size: 10px;">
+            <tr>
+                <th>Site Name: </th>
+                <td>{{siteDtl.name}}</td>
+            </tr>
+            <tr>
+                <th>Total MW: </th>
+                <td>{{siteDtl.total_mw}}</td>
+            </tr>
+            <tr>
+                <th>Project Start Date: </th>
+                <td>{{siteDtl.started_at}}</td>
+            </tr>
+            <tr>
+                <th>Adress: </th>
+                <td>{{siteDtl.address}}</td>
+            </tr>
+            <tr>
+                <th>Country: </th>
+                <td>{{siteDtl.country}}</td>
+            </tr>
+            <tr>
+                <th>Created by: </th>
+                <td>{{profile_name}}</td>
+            </tr>
+            <tr>
+                <th>Drone Pilot 1: </th>
+                <td>{{siteDtl.pilot1}}</td>
+            </tr>
+            <tr>
+                <th>Drone Pilot 2: </th>
+                <td>{{siteDtl.pilot2}}</td>
+            </tr>
+            <tr>
+                <th>Company: </th>
+                <td>{{siteDtl.company}}</td>
+            </tr>
+            <tr>
+                <th>Status: </th>
+                <td>{{siteDtl.status}}</td>
+                <!-- <td>
+                    <select id="status">
+                        <option value="">{{siteDtl.status}}</option>
+                        <option value="">Completed</option>
+                      </select>
+                </td> -->
+            </tr>
+            <tr>
+                <th>Remarks: </th>
+                <td>{{siteDtl.remark}}</td>
+            </tr>
+        </table>
+        </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="col-sm-9" style="padding-left: 10px;color: white;">
+    <tabset>
+        <tab heading="IR Images" id="tab1">
+            <div class="row">
+                <div class="col-9">
+                    <div class="row">
+                        <div class="col-3">
+                            <div class="card mt-1" style="color: white;height: 28vh;">
+                            <h5 class="card-title"><u>Folder</u></h5>
+                                <div class="card-body">
+                                    <table class="table-borderless table-sm tableBodyScroll" style="color:white;font-size: 10px;">
+                                        <tr *ngFor="let folder of irFolder">
+                                            <td class="pointer" (click)="goFolderDtls(folder)">{{folder}}</td>
+                                            <td><fa-icon icon="check"></fa-icon></td>
+                                        </tr>
+                                        <!-- <tr>
+                                            <td>IR Solar Images 2</td>
+                                            <td>-</td>
+                                        </tr>
+                                        <tr>
+                                            <td>IR Solar Images 3</td>
+                                            <td><fa-icon icon="check"></fa-icon></td>
+                                        </tr> -->
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="card mt-1" style="color: white;height: 28vh;">
+                            <h5 class="card-title"><u>Files</u></h5>
+                                <div class="card-body">
+                                    <table class="table table-borderless table-sm tableBodyScroll" style="color:white;font-size: 10px;">
+                                        <thead>
+                                        <tr>
+                                            <th><u>Name</u></th>
+                                            <th><u>Anomalies</u></th>
+                                            <th></th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr *ngFor="let file of irFileDtls">
+                                            <td class="pointer" (click)="getIrImages(file.path)">{{file.name}}</td>
+                                            <td>2</td>
+                                            <td><fa-icon icon="check"></fa-icon></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-9">
+                            <img *ngIf="!irImageActv" src="../../../assets/images/no-image.jpg" style="width: 100%;height: 60vh;">
+                            <img *ngIf="irImageActv" src="{{irImageBig}}" style="width: 100%;height: 60vh;">
+                        </div>
+                        <div class="col-12">
+                            <h5>List of Annotations</h5>
+                            <div class="card" style="padding-left: 0px;">
+                                <div class="card-body">
+                                    <table class="table table-borderless tableBodyScroll" style="color: white;font-size: 10px;text-align: center;">
+                                        <thead>
+                                        <tr>
+                                            <th><u>Annotation ID</u></th>
+                                            <th><u>Anomalies Type</u></th>
+                                            <th><u>Severity</u></th>
+                                            <th><u>Panel ID</u></th>
+                                            <th><u>Source</u></th>
+                                            <th><u>Date</u></th>
+                                            <th><u>Gps Coordinate</u></th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let antnList of annotation">
+                                                <td>{{antnList.id}}</td>
+                                                <td>{{antnList.anomaly_type}}</td>
+                                                <td>{{antnList.defect_severity_id}}</td>
+                                                <td>{{antnList.panel_id}}</td>
+                                                <td>{{antnList.id}}</td>
+                                                <td>{{antnList.created_at}}</td>
+                                                <td>{{antnList.latitude}},{{antnList.longitude}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card" style="height: 100%;">
+                        <div class="card-body">
+                        <div class="scroll">
+                            <form [formGroup]="irForm">
+                            <h5><u>Annotations</u></h5>
+                            <button (click)="toggleIRModule()">Identify Module</button>
+                            <table *ngIf="moduleIRShow" class="table-borderless" style="font-size: 10px;">
+                                <tr>
+                                    <td>Module GPS :</td>
+                                    <td>40.23455</td>
+                                </tr>
+                                <tr>
+                                    <td>Coordinate :</td>
+                                    <td>-104.7789</td>
+                                </tr>
+                            </table>
+                            <!-- <button *ngIf="moduleShow" (click)="toggleAnnotation()">New Annotations</button> -->
+                            <!-- start moduleShow -->
+                            <div *ngIf="moduleIRShow">
+                            <button>Identify Anomalies</button> 
+                            <table class="table-borderless" style="font-size: 10px;">
+                                <tr>
+                                    <td>Annotations :</td>
+                                    <td>11896</td>
+                                </tr>
+                                <tr>
+                                    <td>Last Modified :</td>
+                                    <td>13/02/2020</td>
+                                </tr>
+                                <tr>
+                                    <td>Modified By :</td>
+                                    <td>Admin</td>
+                                </tr>
+                                <tr>
+                                    <td>Anomalies type :</td>
+                                    <td>
+                                        <select id="irAnomalies" formControlName="irAnomaliesType">
+                                            <option value="">Cell Hotspot</option>
+                                            <option value="">Module</option>
+                                            <option value="">Multi Cell</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Severity type :</td>
+                                    <td>
+                                        <select id="irSeverity" formControlName="irSeverityType">
+                                            <option value="">1</option>
+                                            <option value="">2</option>
+                                            <option value="">3</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Type Definition :</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Additional Information :</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Remark :</td>
+                                    <td>
+                                        <textarea name="" id="" cols="20" rows="2"></textarea>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <h5 ><u>Temperature Measurement</u></h5>
+                            <table class="table-borderless" style="font-size: 10px;">
+                                <tr>
+                                    <td>Average :</td>
+                                    <td>18.8 C</td>
+                                </tr>
+                                <tr>
+                                    <td>Low :</td>
+                                    <td>-10.5 C</td>
+                                </tr>
+                                <tr>
+                                    <td>High :</td>
+                                    <td>20.8 C</td>
+                                </tr>
+                                <tr>
+                                    <td>Delta :</td>
+                                    <td>31.2 C</td>
+                                </tr>
+                            </table>
+
+                            <h5><u>Comments</u></h5>
+                            <div class="card" style="background-color: #333333;padding-top: 10px;padding-bottom: 10px;">
+                                <div class="card-body">
+                                    <h6>User (13/02/2020 / 05:32PM)
+                                    Anomalies annotations made for solar cell.</h6>
+                                </div>
+                            </div>
+                            <div class="row" style="margin-top: 10px;">
+                                <div class="col">
+                                    <button>Delete</button>
+                                </div>
+                                <div class="col">
+                                    <button>Save</button>
+                                </div>
+                            </div>
+                        </div>
+                        </form>
+                        </div> 
+                        <!-- end of moduleShow -->
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </tab>
+
+        <tab heading="Orthomosaic">
+            <div class="row" style="padding-left: 10px;">
+                <div class="col-9">
+                    <div class="row">
+                        <!-- <img src="../../../assets/images/inspection-defect.png" style="height: 60vh;width: 100%;"> -->
+                        <div leaflet leafletDraw class="leaflet-map" 
+                        [leafletOptions]="leaftletOptions"
+                        [leafletDrawOptions]="drawOptions"
+                        [leafletZoom]="currentZoom"
+                        (leafletZoomChange)="onZoomChange($event)"
+                        [leafletCenter]="currentCenter"
+                        [leafletLayersControl]="layersControl"
+                        (leafletCenterChange)="onCenterChange($event)"
+                        (leafletDrawCreated)="onDrawCreated($event)"
+                        (leafletMapReady)="onMapReady($event)" style="height: 60vh;width: 100%;">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <h5>List of Annotations</h5>
+                            <div class="card" style="padding-left: 0px;">
+                                <div class="card-body">
+                                    <table class="table table-borderless tableBodyScroll" style="color: white;font-size: 10px;text-align: center;">
+                                        <thead>
+                                        <tr>
+                                            <th><u>Annotation ID</u></th>
+                                            <th><u>Anomalies Type</u></th>
+                                            <th><u>Severity</u></th>
+                                            <th><u>Panel ID</u></th>
+                                            <th><u>Source</u></th>
+                                            <th><u>Date</u></th>
+                                            <th><u>Gps Coordinate</u></th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>11896</td>
+                                                <td>Cell Hotspot</td>
+                                                <td>3</td>
+                                                <td>-</td>
+                                                <td>IR_2</td>
+                                                <td>13/02/2020</td>
+                                                <td>40.23455,-104.77889</td>
+                                            </tr>
+                                            <tr>
+                                                <td>11896</td>
+                                                <td>Cell Hotspot</td>
+                                                <td>3</td>
+                                                <td>-</td>
+                                                <td>IR_2</td>
+                                                <td>13/02/2020</td>
+                                                <td>40.23455,-104.77889</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <!-- <h5>Identify Modules</h5> -->
+                    <div class="card" style="height: 100%;">
+                        <div class="card-body">
+                            <form [formGroup]="orthoForm">
+                            <button style="margin-top: 10px;" (click)="toggleOrthoModule()">Identify Module</button>
+                            <!-- ortho module show -->
+                            <div *ngIf="moduleOrthoShow">
+                            <table class="table-borderless" style="font-size: 10px;">
+                                <tr>
+                                    <td>Panel ID:</td>
+                                    <td>15876</td>
+                                </tr>
+                                <tr>
+                                    <td>Module GPS :</td>
+                                    <td>40.23455</td>
+                                </tr>
+                                <tr>
+                                    <td>Coordinate :</td>
+                                    <td>-104.7789</td>
+                                </tr>
+                            </table>
+                            <tabset style="font-size:0.8rem;padding-bottom: 10px;">
+                                <tab heading="IR Images">
+                                    <button style="margin-top: 10px;">Select IR Images</button>
+                                </tab>
+                                <tab heading="Annotations">
+                                    <button style="margin-top: 10px;" (click)="toggleOrthoAnnotation()">New Annotations</button>
+                                    <div *ngIf="moduleTabOrthoShow">
+                                        <table class="table-borderless" style="font-size: 10px;">
+                                            <tr>
+                                                <td>Annotations :</td>
+                                                <td>11896</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Last Modified :</td>
+                                                <td>13/02/2020</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Modified By :</td>
+                                                <td>Admin</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Anomalies type :</td>
+                                                <td>
+                                                    <select id="orthoAnomalies" formControlName="orthoAnomaliesType">
+                                                        <option value="">Cell Hotspot</option>
+                                                        <option value="">Module</option>
+                                                        <option value="">Multi Cell</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Severity type :</td>
+                                                <td>
+                                                    <select id="orthoSeverity" formControlName="orthoAnomaliesType">
+                                                        <option value="">1</option>
+                                                        <option value="">2</option>
+                                                        <option value="">3</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Type Definition :</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Additional Information :</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Remark :</td>
+                                                <td>
+                                                    <textarea name="" id="" cols="30" rows="2"></textarea>
+                                                </td>
+                                            </tr>
+                                        </table>
+            
+                                        <h5><u>Temperature Measurement</u></h5>
+                                        <table class="table-borderless" style="font-size: 10px;">
+                                            <tr>
+                                                <td>Average :</td>
+                                                <td>N/A</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Low :</td>
+                                                <td>N/AC</td>
+                                            </tr>
+                                            <tr>
+                                                <td>High :</td>
+                                                <td>N/A</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Delta :</td>
+                                                <td>N/A</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </tab>
+                            </tabset>
+                            <h5><u>Comments</u></h5>
+                            <div class="card" style="background-color: #333333;padding-top: 10px;padding-bottom: 10px;">
+                                <div class="card-body">
+                                    <h6>User (13/02/2020 / 05:32PM)
+                                    Anomalies annotations made for solar cell.</h6>
+                                </div>
+                            </div>
+                            <div class="row" style="margin-top: 10px;">
+                                <div class="col">
+                                    <button>Delete</button>
+                                </div>
+                                <div class="col">
+                                    <button>Save</button>
+                                </div>
+                            </div>
+                            </div>
+                            <!-- ortho module end -->
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </tab>
+
+        <tab heading="Report">
+            <div class="row">
+                <div class="col-3">
+                    <div class="card" style="height: 100%;">
+                        <div class="card-body">
+                            <form [formGroup]="reportForm">
+                            <h5><u>Filters</u></h5>
+                            <h6>
+                                <select id="rptFilter">
+                                    <option value="">PDF</option>
+                                    <option value="">Words</option>
+                                </select>
+                            </h6>
+
+                            <h5><u>Range</u></h5>
+                            <table class="table table-borderless table-sm" style="color: white;font-size: 10px;">
+                                <tr>
+                                    <td>Date :</td>
+                                    <td>
+                                        <input type="date" class="form-control" formControlName="rptDate" placeholder="" 
+                                        style="height: 2vh;font-size: 0.5rem;width: 9vw;">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>GPS Coordinate :</td>
+                                    <td>
+                                        <select id="rptCoordinat" formControlName="rptCoordinat">
+                                            <option value="">12.3243</option>
+                                            <option value="">24.7456</option>
+                                            <option value="">38.8978</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Panel ID :</td>
+                                    <td>
+                                        <select id="rptPanel" formControlName="rptPanel">
+                                            <option value="">546234</option>
+                                            <option value="">247456</option>
+                                            <option value="">388978</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                            </table>
+                            <h5><u>Defect Type</u></h5>
+                            <table class="table table-borderless table-sm" style="color: white;font-size: 10px;margin-left: 15px;">
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" class="form-check-input" value="1">
+                                        Defect 1
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" class="form-check-input" value="4">
+                                        Defect 4
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" class="form-check-input" value="2">
+                                        Defect 2
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" class="form-check-input" value="5">
+                                        Defect 5
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" class="form-check-input" value="3">
+                                        Defect 3
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" class="form-check-input" value="6">
+                                        Defect 6
+                                    </td>
+                                </tr>
+                            </table>
+                            <h5><u>Severity Type</u></h5>
+                            <table class="table table-borderless table-sm" style="color: white;font-size: 10px;margin-left: 15px;">
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" class="form-check-input" value="1">
+                                        1
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" class="form-check-input" value="2">
+                                        2
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" class="form-check-input" value="3">
+                                        3
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="row">
+                                <div class="col">
+                                    <button>Refresh</button>
+                                </div>
+                                <div class="col">
+                                    <button>Apply</button>
+                                </div>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-9">
+                    <h5>Preview</h5>
+                    <ngx-extended-pdf-viewer [src]="'../../../assets/pdf/dummy.pdf'" 
+                    useBrowserLocale="true" height="80vh" class="scroll-container"></ngx-extended-pdf-viewer>
+                </div>
+            </div>
+        </tab>
+      </tabset>
+</div>
+
+</div>

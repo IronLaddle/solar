@@ -1,0 +1,30 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Rubik for Titles & Headings */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+/* Varela for Paragraphs & Body */
+@import url('https://fonts.googleapis.com/css2?family=Varela&display=swap');
+
+* {
+  font-family: 'Varela', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Rubik', sans-serif;
+  font-weight: bold;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.btn-f {
+  background-color : rgb(79, 113, 227);
+  color: #ffffff;
+  border: transparent;
+}
+
+/* mouse pointer */
+.pointer {
+  cursor: pointer;
+}

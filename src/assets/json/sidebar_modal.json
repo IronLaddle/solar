@@ -1,0 +1,133 @@
+{
+  "projectOverView": {
+    "show": false,
+    "img_url": "",
+    "text_content": ""
+  },
+  "severityModal": {
+    "show": false,
+    "img_url": "",
+    "text_content": ""
+  },
+  "inspectionHighlights_1": {
+    "show": false,
+    "portsInspected": "",
+    "assetsInspected": "",
+    "seaWallCount": "",
+    "seaWall": {},
+    "roofCount": "",
+    "roof": {},
+    "colorCodes": [],
+    "overallAssetChart": {
+      "chartWidth": "",
+      "chartData": [],
+      "isLengend": false
+    },
+    "defectDetectedChart": {
+      "chartWidth": "",
+      "chartData": [],
+      "isLengend": false
+    }
+  },
+  "recentUploads": {
+    "show": false,
+    "lastAddedCount": 0,
+    "isLoadMore": "false",
+    "text_content": []
+  },
+  "myNotifiaction": {
+    "show": false,
+    "isLoadMore": "false",
+    "unReadCount": 0,
+    "text_content": []
+  },
+  "inspectionDetails": {
+    "show": false,
+    "img_url": "",
+    "text_content": []
+  },
+  "areaOfInspection": {
+    "show": false,
+    "text_content": []
+  },
+  "inspectionHighlights_2": {
+    "show": false,
+    "overallAssetChart": {
+      "chartWidth": "",
+      "chartData": [],
+      "isLengend": false
+    },
+    "assetSeverity": {
+      "chartWidth": "",
+      "chartData": [],
+      "isLengend": false
+    },
+    "repairPriority": {
+      "chartWidth": "",
+      "chartData": [],
+      "isLengend": false
+    },
+    "defectTypes": {
+      "chartWidth": "",
+      "chartData": [],
+      "isLengend": false
+    },
+    "maintenanceWorks": {
+      "plan": "90",
+      "actual": "80"
+    },
+    "repairWorks": {
+      "plan": "90",
+      "actual": "80"
+    }
+  },
+  "siteVerification": {
+    "show": false,
+    "text_content": []
+  },
+  "roof": {
+    "show": false,
+    "text_content": []
+  },
+  "defectType": {
+    "show": false,
+    "text_content": []
+  },
+  "annotation": {
+    "show": false
+  },
+  "history": {
+    "show": false,
+    "text_content": []
+  },
+  "inspectionMenu": {
+    "show": false,
+    "text_content": []
+  },
+  "viewInspection": {
+    "show": false,
+    "isLoadMore": "false",
+    "text_content": []
+  },
+  "accessSavedReport": {
+    "show": false,
+    "isLoadMore": "false",
+    "text_content": []
+  },
+  "approveReport": {
+    "show": false,
+    "isLoadMore": "false",
+    "text_content": []
+  },
+  "overallassetView": {
+    "show": false
+  },
+  "reportSummary": {
+    "show": "false",
+    "isLoadMore": "false",
+    "text_content": []
+  },
+  "standoffShots": {
+    "show": false
+  }
+}

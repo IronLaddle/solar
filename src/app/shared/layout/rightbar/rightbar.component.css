@@ -1,0 +1,51 @@
+/* Right layout */
+
+.right {
+    display: flex;
+    position: absolute;
+    top: 0vh;
+    right: 0;
+    height: 100vh;
+    z-index: 500;
+}
+
+.right-bar {
+    height: 90%;
+    width: 0vw;
+    background-color: #ffffff;
+    transition: all 350ms;
+    -moz-transition: all 350ms;
+    -webkit-transition: all 350ms;
+    -o-transition: all 350ms;
+}
+
+.right-bar.show {
+    width: 18vw;
+}
+
+.right-bar.show.toggle {
+    width: 0
+}
+
+/* defect wizard */
+
+.defect-wizard {
+    display: none;
+    height: 100%;
+}
+
+.defect-wizard.show {
+    display: block;
+}
+
+
+/* image list */
+
+.image-list {
+    display: none;
+    height: 100%;
+}
+
+.image-list.show {
+    display: block;
+}

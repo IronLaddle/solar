@@ -1,0 +1,122 @@
+<nav class="navbar navbar-expand-lg">
+    <!-- logo -->
+    <div class="navbar-brand navbar-light bg-light">
+        <a href="/" class="nav-header">
+        <img src="../../../../assets/image/aerodyne-logo-dark.svg" style="width: max-content; height: 35px;">
+        </a>
+        <!-- <a href="/" class="nav-header"> Vertikaliti <span style="color:#d2c28c">SOLAR</span> </a> -->
+        <!-- <a href="/" class="nav-header"> Aerodyne</a> -->
+    </div>
+
+    <button class="navbar-toggler navbar-light dropdown-toggle" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation" (click)="hamburgerStatus = !hamburgerStatus">
+        <div class="hamburger" [ngClass]="{'hide': hamburgerStatus}">
+        </div>
+    </button>
+    <!-- menu content -->
+    <div class="collapse navbar-collapse navbar-menu" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto navbar-left">
+            <!-- <li class="nav-item">
+                <a class="nav-link" href="/"> Vertikaliti SOLAR </a>
+            </li> -->
+           
+        </ul>
+
+        <ul class="navbar-nav navbar-right">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="site" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    <img src="../../../../assets/image/site-management-icon.svg" > Site Management
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="site">
+                    <li>
+                        <a class="dropdown-item" (click)="viewSites()">
+                            View All Sites
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" (click)="newSite()">
+                            Create New Sites
+                        </a>
+                    </li>
+                </div>
+            </li>
+            <li class="nav-item space-right" *ngIf="showAnnotation">   
+                <a class="nav-link pointer" (click)="openModal(template)">
+                    <img src="../../../../assets/image/site-management-icon.svg" (click)="openModal(template)"> Annotation Management
+                </a>
+            </li>
+            <li class="nav-item space-right">
+                <a class="nav-link pointer" (click)="userMgmnt()">
+                    <img src="../../../../assets/image/user-management-icon.svg" (click)="userMgmnt()"> User Management
+                </a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img src="../../../../assets/image/user-avatar-icon.svg" style="height: 25px;">
+                    Hi, {{userDetails['fullname']}}
+                    <fa-icon icon="caret-down"></fa-icon>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item">
+                        {{userDetails['fullname']}}
+                    </a>
+                    <hr class="my-4" style="margin: 0 auto !important">
+                    <a class="dropdown-item" (click)="logout()">Logout</a>
+                </div>
+            </li>
+        </ul>
+
+        <ul class="navbar-nav navbar-right">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img src="../../../../assets/image/notification-icon.svg" style="height: 25px;">
+                    <span class="badge badge-danger badge-counter">{{notifiyCount}}</span>
+                  </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" >
+                    <ul class="dropdown-item" >
+                        <li *ngFor="let notification of notify">{{notification.information}}
+                            <hr class="my-4" style="margin: 0 auto !important">
+                        </li>
+                    </ul>
+                    <!-- <div class="row" *ngFor="let notification of notify">
+                        <a class="dropdown-item">{{notification.information}}
+                        <hr class="my-4" style="margin: 0 auto !important"></a>
+                    </div> -->
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+<app-breadcrumb></app-breadcrumb>
+
+<ng-template #template>
+    <div class="modal-header">
+      <h6 class="modal-title pull-left" id="my-modal-title">Annotation Management</h6>
+      <!-- <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button> -->
+    </div>
+    <div class="modal-body">
+      <!-- <div id="my-modal-description">
+        
+      </div> -->
+      <div class="row">
+      <div class="col-6">
+        <label class="card-text">Create Root Type</label>
+        <input type="text" class="form-control" formControlName="siteName" placeholder="">
+      </div>
+      <div class="col-6">
+        <label class="card-text">Name</label>
+        <input type="text" class="form-control" formControlName="siteName" placeholder="">
+        <label class="card-text">Directory</label>
+        <input type="text" class="form-control" formControlName="startDate" placeholder="">
+        <label class="card-text">Definition</label>
+        <input type="text" class="form-control" formControlName="country" placeholder="">
+        <label class="card-text">Additional Information</label>
+        <textarea class="form-control" formControlName="siteAddress" rows="3" cols="30"></textarea>
+        <label class="card-text">Remarks</label>
+        <input type="text" class="form-control" formControlName="totalMw" placeholder="">
+      </div>
+    </div>
+    </div>
+  </ng-template>
