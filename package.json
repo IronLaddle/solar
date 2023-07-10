@@ -36,7 +36,7 @@
     "@types/leaflet.markercluster": "^1.4.2",
     "@types/socket.io-client": "^1.4.32",
     "bootstrap": "^4.4.1",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "leaflet": "^1.6.0",
     "leaflet-draw": "^1.0.4",
     "leaflet-responsive-popup": "^0.6.4",
